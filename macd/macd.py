@@ -21,8 +21,8 @@ def wma(data,weight):
     wei=np.array(weight)
     k=len(wei)
     wma=pd.Series(data=None,index=data.index)
-    for i in range(k-1,len(data)): #注意range
-        wma[i]=sum(wei*data[(i-k+1):(i+1)]) #注意取值
+    for i in range(k-1,len(data)): 
+        wma[i]=sum(wei*data[(i-k+1):(i+1)]) 
     return wma
 
 b=wma(stock,[0.2,0.2,0.2,0.2,0.2])
@@ -45,7 +45,7 @@ macd=(dif-dea)*2
 
 print(dif['2017-03-14':])
 
-plt.rcParams['axes.unicode_minus']=False #设置负数显示问题
+plt.rcParams['axes.unicode_minus']=False #设置负数显示
 
 
 dif.plot(label='DIF',color='b')
